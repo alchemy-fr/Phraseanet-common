@@ -338,8 +338,8 @@ let pym = require('pym.js');
                 $selector = $imgTips;
             } else if ($documentTips[0] && shouldResize) {
                 let recordUrl = $documentTips.data('src');
-                recordWidth = $documentTips.data('original-width');
-                recordHeight = $documentTips.data('original-height');
+                recordWidth = $documentTips.data('original-width') > 400 ? $documentTips.data('original-width') : 400;
+                recordHeight = $documentTips.data('original-width') > 400 ? $documentTips.data('original-height') : 600;
                 $documentTips.css({ display: 'block', margin: '0 auto' });
                 $selector = $documentTips;
                 activeThumbnailFrame = new pym.Parent(customId, recordUrl);
